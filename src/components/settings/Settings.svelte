@@ -61,7 +61,7 @@
 		</Setting>
 		<Setting type="switch" bind:value={$fancyFont}>
 			<span slot="title">Fancy font mode</span>
-			<span slot="desc">For the full choral experience</span>
+			<span slot="desc">For the full zoological experience</span>
 		</Setting>
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>

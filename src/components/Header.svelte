@@ -81,6 +81,6 @@
 		width: 100%;
 		font-size: var(--fs-large);
 		text-align: center;
-        font-family: 'Uncial Antiqua', 'Helvetica Neue', Arial, sans-serif;
+        font-family: 'Permanent Marker', 'Helvetica Neue', Arial, sans-serif;
 	}
 </style>
