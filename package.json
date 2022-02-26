@@ -1,6 +1,6 @@
 {
-  "name": "byrdle",
-  "description": "The choral-themed word guessing game.",
+  "name": "zoodle",
+  "description": "The animal-themed word guessing game.",
   "version": "5.0.1",
   "private": "true",
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rbrignall/open-byrdle.git"
+    "url": "git+https://github.com/michaelgundlach/zoodle.git"
   },
   "keywords": [],
-  "author": "rbrignall",
+  "author": "michaelgundlach",
   "bugs": {
-    "url": "https://github.com/rbrignall/open-byrdle/issues"
+    "url": "https://github.com/michaelgundlach/zoodle/issues"
   },
-  "homepage": "https://github.com/rbrignall/open-byrdle#readme",
+  "homepage": "https://github.com/michaelgundlach/zoodle#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^4.1.0",

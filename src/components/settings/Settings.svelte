@@ -88,20 +88,16 @@
     </div>
         <div class="links">
 			Feedback
-			<a href="https://twitter.com/intent/tweet?screen_name=rbrignall" target="_blank">Twitter</a>
+			<a href="https://twitter.com/intent/tweet?screen_name=michaeltherobot" target="_blank">Twitter</a>
 		</div>
         <h3 style="margin-top: 10px;">Credits</h3>
         <div>
-            <p>This game is inspired by <a href="https://www.powerlanguage.co.uk/wordle/" target="_blank">Wordle</a>, and is an implementation of an idea of <a href="https://twitter.com/QuireMemes">QuireMemes</a>.</p>
-            <p>The <a href="https://github.com/rbrignall/open-byrdle">code</a> is open source, written with Svelte in Typescript by <a href="https://github.com/rbrignall" target="_blank">rbrignall</a> on a base by <a href="https://github.com/MikhaD" target="_blank">MikhaD</a>.</p>
-        </div>
-        
-        <div>
-	       Byrdle is free to play and ad-free, but you can <a href="https://www.buymeacoffee.com/rbrignall" target="_blank">buy me a coffee</a>!
+            <p>This game is inspired by <a href="https://www.byrdle.net" target="_blank">Byrdle</a>.</p>
+            <p>The <a href="https://github.com/michaelgundlach/zoodle">code</a> is open source, written with Svelte in Typescript by <a href="https://github.com/michaelgundlach" target="_blank">Michael Gundlach</a> on a base by <a href="https://github.com/rbrignall" target="_blank">rbrignall</a>.</p>
         </div>
 	</div>
     <div class="footer">
-        <div>Version: Byrd 5.0.2</div>
+        <div>Version: Zoodle 5.0.2</div>
         <div class="word">
             Game #{wordNumber+1}
         </div>

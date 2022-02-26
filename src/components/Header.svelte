@@ -37,7 +37,7 @@
 		{/if}
 	</div>
 	<h1>
-		byrdle
+		zoodle
 	</h1>
 	<div class="icons">
 		{#if showStats}

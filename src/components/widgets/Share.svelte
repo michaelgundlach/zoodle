@@ -8,9 +8,9 @@
 
 	export let state: GameState;
 	const toaster = getContext<Toaster>("toaster");
-    const url ="https://www.byrdle.net";
+    const url ="https://zoodle.horse";
 
-	$: stats = `Byrdle ${state.wordNumber+1} ${
+	$: stats = `Zoodle ${state.wordNumber+1} ${
 		(state.gameStatus === 'WIN') ? state.guesses : "X"
 	}/${state.boardState.length}\n\n${state.evaluations
 		.slice(0, state.guesses)
@@ -24,7 +24,7 @@
     <WhatsApp class="share-button" text="{stats} {url}" />
     <div class="copybutton"
         on:click={() => {
-            navigator.clipboard.writeText(stats.concat("https://www.byrdle.net"));
+            navigator.clipboard.writeText(stats.concat("https://zoodle.horse"));
 		    toaster.pop("Copied to clipboard");    
         }}
     >
