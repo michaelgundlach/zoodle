@@ -185,6 +185,7 @@ export const PRAISE = [
 		"Almost went the way of the dodo",
 		"You must have been hibernating",
 		"Do I smell mustelids?",
+		"Not bad for a sea squirt",
 	],
 ];
 
