@@ -2,7 +2,7 @@ import seedrandom from "seedrandom";
 import { GameMode } from "./enums";
 import wordLists from "./words_5_6";
 
-export const SIXLETTERDAY = 110;
+export const SIXLETTERDAY = 144;
 
 export const ROWS = 6;
 
