@@ -49,7 +49,6 @@
 	let showSettings = false;
 	let showStats = false;
 	let showRefresh = false;
-    let showImport = false;
 
 	let board: Board;
 	let timer: Timer;
@@ -157,15 +156,7 @@
 	onMount(() => {
 		if (!(game.gameStatus === "IN_PROGRESS")) setTimeout(() => (showStats = true), delay);
         if (stats.gamesPlayed === 0) {
-            showImport = true;
             setTimeout(() => (showTutorial = true), delay);
-        }
-        if (stats.imported) {
-            stats.imported = false;
-            localStorage.setItem(`statistics`, JSON.stringify(stats));
-            window.history.replaceState({}, document.title, window.location.pathname);
-            toaster.pop("Statistics imported! Welcome to New Byrdle!");
-            setTimeout(() => (showStats = true), delay);
         }
 	});
 	// $: toaster.pop(word);
@@ -208,7 +199,7 @@
 <Modal
 	bind:visible={showTutorial}
 >
-	<Tutorial visible={showTutorial} imported={showImport} />
+	<Tutorial visible={showTutorial} />
 </Modal>
 
 
