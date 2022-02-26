@@ -112,7 +112,7 @@ export const modeData: ModeData = {
 		{
 			name: "Daily",
 			unit: 86400000,
-			start: 1642370400000,	// 17/01/2022
+			start: 1645851600000,	// 26/02/2022
 			seed: newSeed(),
 			historical: false,
 			streak: true,
@@ -121,7 +121,7 @@ export const modeData: ModeData = {
 };
 
 export function getWordNumber() {
-    const numbleOneDate = new Date(2022,0,12,0,0,0,0).setHours(0,0,0,0)
+    const numbleOneDate = new Date(2022,1,26,0,0,0,0).setHours(0,0,0,0)
     const now = new Date().setHours(0,0,0,0)
     const msInDay = 86400000
     return Math.floor((now - numbleOneDate) / msInDay) //% WORDS.length
