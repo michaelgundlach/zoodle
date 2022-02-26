@@ -140,42 +140,52 @@ export function getWordNumber() {
 export const DELAY_INCREMENT = 150;
 
 export const PRAISE = [
-    [
-        "Gloria in excelsis deo!",
-        "Hallelujah!",
-        "I was glaaaaaaad",
-        "Let all the world in ev'ry corner sing!"
-    ],
-    [
-        "Magnificat!",
-        "Jubilate!",
-        "My spirit sang all day",
-        "Jauchzet, frohlocket!"
-    ],
-    [
-        "And all the people rejoiced!",
-        "O Lord make haste to help us",
-        "A great and mighty wonder",
-        "O clap your hands"
-    ],
-    [
-        "Here endeth the lesson",
-        "One guess for each voice part, eh?",
-        "We'll treat that as the warm-up",
-        "Dies irae"
-    ],
-    [
-        "Were you nodding off during the sermon?",
-        "A Byrdle 5-part mess",
-        "Bit more breath control next time",
-        "Helps to watch the conductor",
-        "Tripped over your cassock"
-    ],[
-        "This took you almost as long as Psalm 119!",
-        "Tristis est anima mea",
-        "You're flat!",
-        "Requiem aeternam"
-    ]   
+	[
+		"Mimicry is a valid defense mechanism",
+	], [
+		"King of beasts!",
+		"All the elephants trumpet!",
+		"All the T. Rexes roar!",
+		"All the lions roar!",
+		"All the elk bugle!",
+		"All the people cheer!",
+		"All the lemon tree borers whistle!",
+	], [
+		"All the ferrets dook!",
+		"All the capybaras squeak!",
+		"All the crabs click!",
+		"All the dolphins click!",
+		"All the cranes clang!",
+		"All the curlews pipe!",
+		"All the pigeons coo!",
+		"All the praire dogs bark!",
+		"All the racoons trill!",
+	], [
+		"All the alligators bellow!",
+		"All the alpacas scream!",
+		"All the badgers growl!",
+		"All the giraffes hum!",
+		"All the guinea pigs wheek!",
+		"All the ducks quack!",
+		"All the magpies chatter!",
+		"All the peacocks honk!",
+	], [
+		"All the barred owls caterwaul...",
+		"All the okapis cough...",
+		"All the donkeys bray...",
+		"All the foxes snore...",
+		"All the crickets chirp...",
+		"All the geese hiss...",
+		"All the kookaburras laugh...",
+		"All the linnets chuckle...",
+	], [
+		"Hissssss!",
+		"Heeeee haw!",
+		"Narrowly avoided becoming lunch",
+		"Almost went the way of the dodo",
+		"You must have been hibernating",
+		"Do I smell mustelids?",
+	],
 ];
 
 export function createNewGame(mode: GameMode): GameState {
