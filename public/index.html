@@ -14,7 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Zoodle - the animal word guessing game">
     <meta property="og:description" content="Guess the animal-themed word in 6 tries. A new puzzle is available each day.">
-    <meta property="og:image" content="https://zoodle.horse/img/zoodle_og_1200x630.png">
+	<!-- <meta property="og:image" content="https://zoodle.horse/img/zoodle_og_1200x630.png"> -->
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -26,6 +26,7 @@
     <link href="./img/zoodle_logo_192x192.png" rel="apple-touch-icon" />
 
     <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' />
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script>
   		window.dataLayer = window.dataLayer || [];
@@ -36,11 +37,11 @@
         
         // PWA Service worker 
 		if ("serviceWorker" in navigator) {
-			navigator.serviceWorker.register("./sw.js");
+			window.addEventListener('load', () => navigator.serviceWorker.register("./sw.js"));
 		}
 	</script>
-    
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KM75GGR3XC"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DVTTJ8RBD2"></script>
+
 	<link rel="stylesheet" href="global.css">
 	<link rel="stylesheet" href="build/bundle.css">
 
@@ -49,7 +50,6 @@
 </head>
 
 <body>
-    
 </body>
 
 </html>

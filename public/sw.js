@@ -17,34 +17,44 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(staticCacheName)
     .then(cache => {
-      return cache.addAll(filesToCache);
+      return cache.addAll(filesToCache.map(f => f + "?sw_installing"));
     })
   );
 });
 
 
-self.addEventListener('fetch', event => {
-  //console.log('Fetch event for ', event.request.url);
-  event.respondWith(
-    caches.match(event.request)
-    .then(response => {
-      if (response) {
-        //console.log('Found ', event.request.url, ' in cache');
-        return response;
-      }
-      //console.log('Network request for ', event.request.url);
-      return fetch(event.request)
-      .then(response => {
-        return caches.open(staticCacheName).then(cache => {
-            cache.put(event.request.url, response.clone());
-            return response;
-        });
-      });
+async function fetch_and_cache(request) {
+    log('Network request (which will be cached) for ' + request.url);
+	let response = await fetch(request);
+	if (!response) {
+		throw "Failed to fetch " + request.url;
+	}
+	let cache = await caches.open(staticCacheName);
+	cache.put(request.url, response.clone());
+	return response;
+}
 
-    }).catch(error => {
-      // TODO 6 - Respond with custom offline page
-    })
-  );
+self.addEventListener('fetch', event => {
+  log('Fetch event for ' + event.request.url);
+  if (event.request.url.indexOf("?sw_installing") !== -1) {
+	  event.request.url = event.request.url.replace("?sw_installing", "");
+	  event.respondWith(fetch_and_cache(event.request));
+  } else {
+	  event.respondWith(
+		caches.match(event.request)
+		.then(response => {
+		  if (response) {
+		    log('Found '+ event.request.url+ ' in cache');
+			return response;
+		  } else {
+			  return fetch_and_cache(event.request);
+		  }
+
+		}).catch(error => {
+		  log("Error in TODO 6 code"+ error); // TODO 6 - Respond with custom offline page
+		})
+	  );
+	}
 });
 
 
@@ -58,10 +68,11 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheAllowlist.indexOf(cacheName) === -1) {
+		    log("DELETING " + cacheName);
             return caches.delete(cacheName);
           }
         })
-      );
+      ).then(() => {log("ACTIVATION DONE BABY")});
     })
   );
 });
