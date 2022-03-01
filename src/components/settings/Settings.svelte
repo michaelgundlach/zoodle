@@ -97,7 +97,7 @@
         </div>
 	</div>
     <div class="footer">
-        <div>Version: Zoodle 1.0.1</div>
+        <div>Version: Zoodle 1.0.2</div>
         <div class="word">
             Game #{wordNumber+1}
         </div>
