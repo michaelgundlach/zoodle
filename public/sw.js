@@ -1,5 +1,5 @@
 // Increase the v number when the app is updated
-const staticCacheName = "zoodle-v1.0.2";
+const staticCacheName = "zoodle-v1.1.0";
 
 const filesToCache = [
 	"./",
@@ -29,8 +29,10 @@ async function fetch_and_cache(request) {
 	if (!response) {
 		throw "Failed to fetch " + request.url;
 	}
+	let url = request.url;
+	url = url.replace("?sw_installing", "");
 	let cache = await caches.open(staticCacheName);
-	cache.put(request.url, response.clone());
+	cache.put(url, response.clone());
 	return response;
 }
 

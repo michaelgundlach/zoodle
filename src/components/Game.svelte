@@ -109,7 +109,8 @@
 	function win() {
 		board.bounce(game.guesses - 1);
         game.gameStatus = "WIN";
-		setTimeout(() => toaster.pop(sampleArray(PRAISE[game.guesses - 1])), DELAY_INCREMENT * ROWS);
+		game.praise = sampleArray(PRAISE[game.guesses - 1]);
+		setTimeout(() => toaster.pop(game.praise), DELAY_INCREMENT * ROWS);
 		setTimeout(() => (showStats = true), delay * 1.4);
 		if (!modeData.modes[$mode].historical) {
 			++stats.guesses[game.guesses];
@@ -129,6 +130,7 @@
 	function lose() {
 //		++game.guesses;
         game.gameStatus = "FAIL";
+		game.praise = "";
         setTimeout(() => toaster.pop(word.toUpperCase()), DELAY_INCREMENT * ROWS);
 		setTimeout(() => (showStats = true), delay);
 		if (!modeData.modes[$mode].historical) {

@@ -9,12 +9,12 @@
 	const toaster = getContext<Toaster>("toaster");
 
 
-	$: stats = `Zoodle ${state.wordNumber+1} ${
+	$: stats = `Zoodle.horse ${state.wordNumber+1} ${
 		state.guesses <= ROWS ? state.guesses : "X"
 	}/${state.boardState.length}\n\n${state.evaluations
 		.slice(0, state.guesses)
 		.map((r) => r.map((l) => l === "absent" ? "⚪" : (l === "correct" ? "🟢" : "🟡")).join(""))
-		.join("\n")}\nhttps://zoodle.horse`;
+		.join("\n")}\n\n"${state.praise}"`;
 </script>
 
 <div

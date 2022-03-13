@@ -21,6 +21,7 @@ type LetterState = "nil" | "absent" | "present" | "correct";
 
 type GameState = {
     gameStatus: "IN_PROGRESS" | "WIN" | "FAIL",
+	praise: string,
 	guesses: number,
 	time: number,
 	wordNumber: number,
