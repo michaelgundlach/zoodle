@@ -124,7 +124,7 @@ export function getWordNumber() {
     const numbleOneDate = new Date(2022,1,26,0,0,0,0).setHours(0,0,0,0)
     const now = new Date().setHours(0,0,0,0)
     const msInDay = 86400000
-    return Math.floor((now - numbleOneDate) / msInDay) //% WORDS.length
+    return Math.round((now - numbleOneDate) / msInDay) //% WORDS.length
 //	return Math.round((modeData.modes[mode].seed - modeData.modes[mode].start) / modeData.modes[mode].unit) + 1;
 }
 
@@ -203,7 +203,7 @@ export const PRAISE = [
 		"All the oxen low!",
 		"All the giraffes hum!",
 		"All the goats bleat!",
-		"All the cattle moo...",
+		"All the cattle moo!",
 		"All the leopards snarl!",
 		"All the guinea pigs wheek!",
 		"All the ducks quack!",

@@ -1,5 +1,5 @@
 // Increase the v number when the app is updated
-const staticCacheName = "zoodle-v1.1.0";
+const staticCacheName = "zoodle-v1.1.1";
 
 const filesToCache = [
 	"./",
@@ -13,12 +13,16 @@ const filesToCache = [
 
 
 self.addEventListener('install', event => {
-  log('Attempting to install service worker and cache static assets');
+  self.skipWaiting();
+  log('install: start');
   event.waitUntil(
     caches.open(staticCacheName)
     .then(cache => {
-      return cache.addAll(filesToCache.map(f => f + "?sw_installing"));
+      return cache.addAll(filesToCache.map(f => f + "?from_install"));
     })
+	.then(() => {
+		log('install: done');
+	})
   );
 });
 
@@ -37,19 +41,20 @@ async function fetch_and_cache(request) {
 }
 
 self.addEventListener('fetch', event => {
-  log('Fetch event for ' + event.request.url);
-  if (event.request.url.indexOf("?sw_installing") !== -1) {
-	  event.request.url = event.request.url.replace("?sw_installing", "");
-	  event.respondWith(fetch_and_cache(event.request));
+  let prefix = `fetch (${event.request.url}): `;
+  if (event.request.url.indexOf("?from_install") !== -1) {
+	  log(prefix + 'passed through');
+	  return;
   } else {
 	  event.respondWith(
-		caches.match(event.request)
+		caches.match(event.request, {ignoreSearch: true}) // so ?from_install is matched
 		.then(response => {
 		  if (response) {
-		    log('Found '+ event.request.url+ ' in cache');
+			  log(prefix + 'cache hit, returning');
 			return response;
 		  } else {
-			  return fetch_and_cache(event.request);
+			  log(prefix + 'cache MISS, passing through without caching response');
+			  return fetch(event.request);
 		  }
 
 		}).catch(error => {
@@ -61,20 +66,21 @@ self.addEventListener('fetch', event => {
 
 
 self.addEventListener('activate', event => {
-  log('Activating new service worker...');
+  log('activate: start');
 
   const cacheAllowlist = [staticCacheName];
 
   event.waitUntil(
     caches.keys().then(cacheNames => {
+		log(`activate: cache names are ${cacheNames}`);
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheAllowlist.indexOf(cacheName) === -1) {
-		    log("DELETING " + cacheName);
+		    log("activate: deleting " + cacheName);
             return caches.delete(cacheName);
           }
         })
-      ).then(() => {log("ACTIVATION DONE BABY")});
+      ).then(() => {log("activate: done")});
     })
   );
 });
