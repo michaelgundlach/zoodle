@@ -11,8 +11,8 @@ const answers = [
         "bower", "egret", "pupae", "raven", "civet", "polyp", "rhino", "trout", "pygmy", "shark",
         "tetra", "udder", "cobra", "krait", "nymph", "coati", "hippo", "eagle", "mamba", "booby",
         "snake", "eland", "scaly", "veldt", "macaw", "avian", "anole", "moose", "stint", "horse",
-        "aphid", "liver", "shrew", "liger", "hyrax", "urine", "robin", "heron", "rumen", "swift",
-        "dingo", "roost", "stoat", "ivory", "finch", "fossa", "squid", "otter", "hyena", "betta",
+        "aphid", "liver", "shrew", "hyrax", "urine", "robin", "heron", "rumen", "swift",
+        "dingo", "roost", "stoat", "ivory", "finch", "fossa", "squid", "otter", "betta",
         "guppy", "chimp", "koati",
 
         "zoodle","zoodle","zoodle","zoodle","zoodle","zoodle","zoodle","zoodle","zoodle","zoodle",

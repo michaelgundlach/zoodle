@@ -1,5 +1,5 @@
 // Increase the v number when the app is updated
-const staticCacheName = "zoodle-v1.1.1";
+const staticCacheName = "zoodle-v1.1.2";
 
 const filesToCache = [
 	"./",
